@@ -67,7 +67,7 @@
 
     settings.prototype.pupScriptUrl = '';
 
-    settings.prototype.afkTime = 12 * 60 * 1000;
+    
 
     settings.prototype.songIntervalMessages = [
       {
@@ -362,7 +362,7 @@
   })();
 
   pupOnline = function() {
-    return API.sendChat("Bot Online!");
+    return API.sendChat(":)");
   };
 
   populateUserData = function() {
@@ -2000,7 +2000,7 @@
     if (data.currentsong === null) {
       data.newSong();
     } else {
-      API.sendChat("/em:" + data.currentDJ.username + " Just played " + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + data.currentwoots + ", Mehs: " + data.currentmehs + ", Added: " + data.currentcurates + ".");
+      API.sendChat("/em:" + data.username + " Just played " + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + data.currentwoots + ", Mehs: " + data.currentmehs + ", Added: " + data.currentcurates + ".");
       data.newSong();
       document.getElementById("button-vote-positive").click();
     }
