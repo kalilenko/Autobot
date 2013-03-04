@@ -1985,7 +1985,7 @@
   };
 
   announceCurate = function(obj) {
-    return API.sendChat("/em" + obj.user.username + " ทำการเพิ่มเพลงลง Playlist");
+    return API.sendChat("/em": + obj.user.username + " ทำการเพิ่มเพลงลง Playlist");
   };
 
   handleUserJoin = function(user) {
@@ -2000,7 +2000,7 @@
     if (data.currentsong === null) {
       data.newSong();
     } else {
-      API.sendChat("/em:Just played " + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + data.currentwoots + ", Mehs: " + data.currentmehs + ", Added: " + data.currentcurates + ".");
+      API.sendChat("/em:" + data.currentsong.user + "Just played " + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + data.currentwoots + ", Mehs: " + data.currentmehs + ", Added: " + data.currentcurates + ".");
       data.newSong();
       document.getElementById("button-vote-positive").click();
     }
