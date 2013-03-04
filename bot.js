@@ -1985,13 +1985,13 @@
   };
 
   announceCurate = function(obj) {
-    return API.sendChat("@" + obj.user.username + " ทำการเพิ่มเพลงลง Playlist");
+    return API.sendChat("/em" + obj.user.username + " ทำการเพิ่มเพลงลง Playlist");
   };
 
   handleUserJoin = function(user) {
     data.userJoin(user);
     data.users[user.id].updateActivity();
-    return API.sendChat("/em: สวัสดีท่าน " + user.username+ "  ยินดีต้อนรับสู่การเสพย์ดนตรีสากลอันไพเราะ ");
+    return API.sendChat(": สวัสดีท่าน @" + user.username+ "  ยินดีต้อนรับสู่การเสพย์ดนตรีสากลอันไพเราะ ");
   };
 
   handleNewSong = function(obj) {
