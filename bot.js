@@ -1985,7 +1985,7 @@
   };
 
   announceCurate = function(obj) {
-    return API.sendChat("/em: " + obj.user.username + " loves this song!");
+    return API.sendChat("/em: " + obj.user.username + " ทำการเพิ่มเพลงลง Playlist");
   };
 
   handleUserJoin = function(user) {
