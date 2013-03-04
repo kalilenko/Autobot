@@ -1991,7 +1991,7 @@
   handleUserJoin = function(user) {
     data.userJoin(user);
     data.users[user.id].updateActivity();
-    return API.sendChat(":Welcome to เสพย์สากล and enjoy to music @" + user.username + " ");
+    return API.sendChat(":Welcome to [Music For You] and enjoy to music @" + user.username + " ");
   };
 
   handleNewSong = function(obj) {
