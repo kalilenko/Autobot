@@ -1991,7 +1991,7 @@
   handleUserJoin = function(user) {
     data.userJoin(user);
     data.users[user.id].updateActivity();
-    return API.sendChat("/em: สวัสดีท่าน " + user.username+ "  ยินดีต้อนรับสู่การเสพย์ดนตรีอันไพเราะ \m/");
+    return API.sendChat("/em: สวัสดีท่าน " + user.username+ "  ยินดีต้อนรับสู่การเสพย์ดนตรีสากลอันไพเราะ ");
   };
 
   handleNewSong = function(obj) {
@@ -2000,7 +2000,7 @@
     if (data.currentsong === null) {
       data.newSong();
     } else {
-      API.sendChat("/em: Just played " + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + data.currentwoots + ", Mehs: " + data.currentmehs + ", Loves: " + data.currentcurates + ".");
+      API.sendChat("/em: + obj.user.username + Just played " + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + data.currentwoots + ", Mehs: " + data.currentmehs + ", Loves: " + data.currentcurates + ".");
       data.newSong();
       document.getElementById("button-vote-positive").click();
     }
