@@ -1,4 +1,4 @@
-Edit By John Chawrai
+Edit By Dj_BenzNova !!
 (function() {
   var Command, RoomHelper, User, afkCheck, afksCommand, allAfksCommand, announceCurate, antispam, apiHooks, avgVoteRatioCommand, badQualityCommand, beggar, chatCommandDispatcher, chatUniversals, cmdHelpCommand, cmds, commandsCommand, cookieCommand, data, dieCommand, disconnectLookupCommand, downloadCommand, fbCommand, forceSkipCommand, handleNewSong, handleUserJoin, handleUserLeave, handleVote, hook, hugCommand, initEnvironment, initHooks, initialize, lockCommand, msToStr, newSongsCommand, overplayedCommand, popCommand, populateUserData, protectCommand, punishCommand, pupOnline, pushCommand, reloadCommand, resetAfkCommand, roomHelpCommand, rulesCommand, settings, skipCommand, sourceCommand, statusCommand, swapCommand, tacoCommand, themeCommand, undoHooks, unhook, unhookCommand, unlockCommand, updateVotes, uservoiceCommand, voteRatioCommand, whyMehCommand, whyWootCommand, wootCommand,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
@@ -1931,13 +1931,13 @@ Edit By John Chawrai
   };
 
   announceCurate = function(obj) {
-    return API.sendChat(" " + obj.user.username + " เพิ่มเพลงนี้ใส่ Playlist !");
+    return API.sendChat(" " + obj.user.username + " รักเลยเพลงนี้ !");
   };
 
   handleUserJoin = function(user) {
     data.userJoin(user);
     data.users[user.id].updateActivity();
-    return API.sendChat("@" + user.username + " ยินดีต้อนรับสู่ห้อง ที่นี่... เชียงใหม่ นะคับ :D");
+    return API.sendChat("@" + user.username + " ยินดีต้อนรับสู่ห้องฟังเพลงสบายๆ นะคับ :D");
   };
 
   handleNewSong = function(obj) {
@@ -1946,7 +1946,7 @@ Edit By John Chawrai
     if (data.currentsong === null) {
       data.newSong();
     } else {
-      API.sendChat("/em: เพลงที่ผ่านไปคือเพลง + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + data.currentwoots + ", Mehs: " + data.currentmehs + ", Added: " + data.currentcurates + ".");
+      API.sendChat("/em: Just played " + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + data.currentwoots + ", Mehs: " + data.currentmehs + ", Loves: " + data.currentcurates + ".");
       data.newSong();
       document.getElementById("button-vote-positive").click();
     }
