@@ -1,4 +1,4 @@
-// Edit by John Chawrai
+// Edit by John Chawrai Technology
 (function() {
   var Command, RoomHelper, User, afkCheck, afksCommand, allAfksCommand, announceCurate, antispam, apiHooks, avgVoteRatioCommand, badQualityCommand, beggar, chatCommandDispatcher, chatUniversals, cmdHelpCommand, cmds, commandsCommand, cookieCommand, data, dieCommand, disconnectLookupCommand, downloadCommand, fbCommand, forceSkipCommand, handleNewSong, handleUserJoin, handleUserLeave, handleVote, hook, hugCommand, initEnvironment, initHooks, initialize, lockCommand, msToStr, newSongsCommand, overplayedCommand, popCommand, populateUserData, protectCommand, punishCommand, pupOnline, pushCommand, reloadCommand, resetAfkCommand, roomHelpCommand, rulesCommand, settings, skipCommand, sourceCommand, statusCommand, swapCommand, tacoCommand, themeCommand, undoHooks, unhook, unhookCommand, unlockCommand, updateVotes, uservoiceCommand, voteRatioCommand, whyMehCommand, whyWootCommand, wootCommand,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
