@@ -1987,6 +1987,11 @@
   announceCurate = function(obj) {
     return API.sendChat("/em: " + obj.user.username + " loves this song and Added");
   };
+  handleUserJoin = function(user) {
+    data.userJoin(user);
+    data.users[user.id].updateActivity();
+    return API.sendChat(":ยินดีต้อนรับสู่ห้อง ที่นี่... เชียงใหม่  @" + user.username + " ");
+  };
 
 
 
