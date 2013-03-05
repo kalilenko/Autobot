@@ -1985,13 +1985,13 @@
   };
 
   announceCurate = function(obj) {
-    return API.sendChat("/em: " + obj.user.username + " loves this song and Added");
+    return API.sendChat("/em: " + obj.user.username + " เพิ่มเพลงนี้ลง Playlist");
   };
 
   handleUserJoin = function(user) {
     data.userJoin(user);
     data.users[user.id].updateActivity();
-    return API.sendChat(":Welcome to เสพย์สากล and enjoy to music @" + user.username + " ");
+    return API.sendChat(":Welcome to ที่นี่... เชียงใหม่ and enjoy to music @" + user.username + " ");
   };
 
   handleNewSong = function(obj) {
