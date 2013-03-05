@@ -1991,7 +1991,7 @@
   handleUserJoin = function(user) {
     data.userJoin(user);
     data.users[user.id].updateActivity();
-    return API.sendChat(":Welcome to Room Music For You and enjoy to music @" + user.username + " ");
+    return API.sendChat(":Welcome to เสพย์สากล and enjoy to music @" + user.username + " ");
   };
 
   handleNewSong = function(obj) {
@@ -2000,7 +2000,7 @@
     if (data.currentsong === null) {
       data.newSong();
     } else {
-      API.sendChat("/em:" + data.djs + " Just played " + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + data.currentwoots + ", Mehs: " + data.currentmehs + ", Added: " + data.currentcurates + ".");
+      API.sendChat("/em: Song just Played is : " + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + data.currentwoots + ", Mehs: " + data.currentmehs + ", Added: " + data.currentcurates + ".");
       data.newSong();
       document.getElementById("button-vote-positive").click();
     }
