@@ -392,61 +392,7 @@
     return data.startAfkInterval();
   };
 
-  afkCheck = function() {
-    var DJs, id, lastActivity, lastWarned, now, oneMinute, secsLastActive, timeSinceLastActivity, timeSinceLastWarning, twoMinutes, user, warnMsg, _ref, _results;
-    _ref = data.users;
-    _results = [];
-    for (id in _ref) {
-      user = _ref[id];
-      now = new Date();
-      lastActivity = user.getLastActivity();
-      timeSinceLastActivity = now.getTime() - lastActivity.getTime();
-      if (timeSinceLastActivity > data.afkTime) {
-        if (user.getIsDj()) {
-          secsLastActive = timeSinceLastActivity / 1000;
-          if (user.getWarningCount() === 0) {
-            user.warn();
-            _results.push(API.sendChat("@" + user.getUser().username + ", I haven't seen you chat or vote in at least 12 minutes. Are you AFK?  If you don't show activity in 2 minutes I will remove you."));
-          } else if (user.getWarningCount() === 1) {
-            lastWarned = user.getLastWarning();
-            timeSinceLastWarning = now.getTime() - lastWarned.getTime();
-            twoMinutes = 2 * 60 * 1000;
-            if (timeSinceLastWarning > twoMinutes) {
-              user.warn();
-              warnMsg = "@" + user.getUser().username;
-              warnMsg += ", I haven't seen you chat or vote in at least 14 minutes now.  This is your second and FINAL warning.  If you do not chat or vote in the next minute I will remove you.";
-              _results.push(API.sendChat(warnMsg));
-            } else {
-              _results.push(void 0);
-            }
-          } else if (user.getWarningCount() === 2) {
-            lastWarned = user.getLastWarning();
-            timeSinceLastWarning = now.getTime() - lastWarned.getTime();
-            oneMinute = 1 * 60 * 1000;
-            if (timeSinceLastWarning > oneMinute) {
-              DJs = API.getDJs();
-              if (DJs.length > 0 && DJs[0].id !== user.getUser().id) {
-                API.sendChat("@" + user.getUser().username + ", you had 2 warnings. Please stay active by chatting or voting.");
-                API.moderateRemoveDJ(id);
-                _results.push(user.warn());
-              } else {
-                _results.push(void 0);
-              }
-            } else {
-              _results.push(void 0);
-            }
-          } else {
-            _results.push(void 0);
-          }
-        } else {
-          _results.push(user.notDj());
-        }
-      } else {
-        _results.push(void 0);
-      }
-    }
-    return _results;
-  };
+  
 
   msToStr = function(msTime) {
     var ms, msg, timeAway;
@@ -1221,79 +1167,7 @@
 
     __extends(afksCommand, _super);
 
-    function afksCommand() {
-      return afksCommand.__super__.constructor.apply(this, arguments);
-    }
-
-    afksCommand.prototype.init = function() {
-      this.command = '/afks';
-      this.parseType = 'exact';
-      return this.rankPrivelege = 'user';
-    };
-
-    afksCommand.prototype.functionality = function() {
-      var dj, djAfk, djs, msg, now, _i, _len;
-      msg = '';
-      djs = API.getDJs();
-      for (_i = 0, _len = djs.length; _i < _len; _i++) {
-        dj = djs[_i];
-        now = new Date();
-        djAfk = now.getTime() - data.users[dj.id].getLastActivity().getTime();
-        if (djAfk > (5 * 60 * 1000)) {
-          if (msToStr(djAfk) !== false) {
-            msg += dj.username + ' - ' + msToStr(djAfk);
-            msg += '. ';
-          }
-        }
-      }
-      if (msg === '') {
-        return API.sendChat("No one is AFK");
-      } else {
-        return API.sendChat('AFKs: ' + msg);
-      }
-    };
-
-    return afksCommand;
-
-  })(Command);
-
-  allAfksCommand = (function(_super) {
-
-    __extends(allAfksCommand, _super);
-
-    function allAfksCommand() {
-      return allAfksCommand.__super__.constructor.apply(this, arguments);
-    }
-
-    allAfksCommand.prototype.init = function() {
-      this.command = '/allafks';
-      this.parseType = 'exact';
-      return this.rankPrivelege = 'user';
-    };
-
-    allAfksCommand.prototype.functionality = function() {
-      var msg, now, u, uAfk, usrs, _i, _len;
-      msg = '';
-      usrs = API.getUsers();
-      for (_i = 0, _len = usrs.length; _i < _len; _i++) {
-        u = usrs[_i];
-        now = new Date();
-        uAfk = now.getTime() - data.users[u.id].getLastActivity().getTime();
-        if (uAfk > (10 * 60 * 1000)) {
-          if (msToStr(uAfk) !== false) {
-            msg += u.username + ' - ' + msToStr(uAfk);
-            msg += '. ';
-          }
-        }
-      }
-      if (msg === '') {
-        return API.sendChat("No one is AFK");
-      } else {
-        return API.sendChat('AFKs: ' + msg);
-      }
-    };
-
-    return allAfksCommand;
+   
 
   })(Command);
 
