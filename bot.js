@@ -24,7 +24,7 @@
       this.startup = __bind(this.startup, this);
 
     }
-    settings.prototype.currentDJ = {};
+   
 
     settings.prototype.currentsong = {};
 
@@ -1998,7 +1998,7 @@
     if (data.currentsong === null) {
       data.newSong();
     } else {
-      API.sendChat("/em: " + data.currentDJ.username + "The song just Played is : " + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + data.currentwoots + ", Mehs: " + data.currentmehs + ", Added: " + data.currentcurates + ".");
+      API.sendChat("/em: The song just Played is : " + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + data.currentwoots + ", Mehs: " + data.currentmehs + ", Added: " + data.currentcurates + ".");
       data.newSong();
       document.getElementById("button-vote-positive").click();
     }
