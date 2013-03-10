@@ -1151,15 +1151,7 @@
       return this.rankPrivelege = 'user';
     };
 
-    wootCommand.prototype.functionality = function() {
-      var msg, nameIndex;
-      msg = "Please WOOT on DJ Booth and support your fellow DJs! AutoWoot: http://bit.ly/Lwcis0";
-      if ((nameIndex = this.msgData.message.indexOf('@')) !== -1) {
-        return API.sendChat(this.msgData.message.substr(nameIndex) + ', ' + msg);
-      } else {
-        return API.sendChat(msg);
-      }
-    };
+ 
 
     return wootCommand;
 
