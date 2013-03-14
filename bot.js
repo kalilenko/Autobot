@@ -70,13 +70,7 @@
 
     
 
-    settings.prototype.songIntervalMessages = [
-      {
-        interval: 15,
-        offset: 0,
-        msg: "I'm a bot!"
-      }
-    ];
+
 
     settings.prototype.songCount = 0;
 
