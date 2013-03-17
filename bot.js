@@ -65,7 +65,17 @@
       curates: 0
     };
 
+    settings.prototype.pupScriptUrl = '';
 
+    
+
+    settings.prototype.songIntervalMessages = [
+      {
+        interval: 500,
+        offset: 0,
+        msg: ":)"
+      }
+    ];
 
     settings.prototype.songCount = 0;
 
@@ -1977,7 +1987,6 @@
   announceCurate = function(obj) {
     return API.sendChat("/em: " + obj.user.username + " loves this song and Added");
   };
-
 
 
 
