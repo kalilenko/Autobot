@@ -1989,7 +1989,7 @@
   };
 
 
-  };
+
 
   handleNewSong = function(obj) {
     var songId;
