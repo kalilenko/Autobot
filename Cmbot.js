@@ -73,8 +73,8 @@
       {
         interval: 15,
         offset: 0,
-        msg: "I'm a bot!"
-      }
+        msg:":)" 
+        }
     ];
 
     settings.prototype.songCount = 0;
