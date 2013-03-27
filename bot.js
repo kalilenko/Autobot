@@ -1985,7 +1985,7 @@
   };
 
   announceCurate = function(obj) {
-    return API.sendChat("/em: " + obj.user.username + " loves this song and Added");
+    return API.sendChat("/em : " + obj.user.username + " loves this song and Added");
   };
   
   handleUserJoin = function(user) {
