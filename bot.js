@@ -1991,7 +1991,7 @@
   handleUserJoin = function(user) {
     data.userJoin(user);
     data.users[user.id].updateActivity();
-    return API.sendChat(":Welcome to เสพย์สากล and enjoy to music @" + user.username + " ");
+    return API.sendChat(" : ยินดีต้อนรับสู่ห้องเสพย์สากล และเปิดเพลงสากลที่ยาวไม่เกิน 6 นาที/เพลง enjoy the music  @" + user.username + " ");
   
   };
 
