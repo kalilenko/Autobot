@@ -1992,6 +1992,7 @@
     data.userJoin(user);
     data.users[user.id].updateActivity();
     return API.sendChat(":Welcome to เสพย์สากล and enjoy to music @" + user.username + " ");
+  
   };
 
 
