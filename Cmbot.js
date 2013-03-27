@@ -1,4 +1,4 @@
-// Technology by John Chawrai
+// Edit By MadLife
 (function() {
   var Command, RoomHelper, User, afkCheck, afksCommand, allAfksCommand, announceCurate, antispam, apiHooks, avgVoteRatioCommand, badQualityCommand, beggar, chatCommandDispatcher, chatUniversals, cmdHelpCommand, cmds, commandsCommand, cookieCommand, data, dieCommand, disconnectLookupCommand, downloadCommand, fbCommand, forceSkipCommand, handleNewSong, handleUserJoin, handleUserLeave, handleVote, hook, hugCommand, initEnvironment, initHooks, initialize, lockCommand, msToStr, newSongsCommand, overplayedCommand, popCommand, populateUserData, protectCommand, punishCommand, pupOnline, pushCommand, reloadCommand, resetAfkCommand, roomHelpCommand, rulesCommand, settings, skipCommand, sourceCommand, statusCommand, swapCommand, tacoCommand, themeCommand, undoHooks, unhook, unhookCommand, unlockCommand, updateVotes, uservoiceCommand, voteRatioCommand, whyMehCommand, whyWootCommand, wootCommand,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
@@ -71,10 +71,10 @@
 
     settings.prototype.songIntervalMessages = [
       {
-        interval: 15,
+        interval: 500,
         offset: 0,
-        msg:":)" 
-        }
+        msg: ":)"
+      }
     ];
 
     settings.prototype.songCount = 0;
@@ -1019,7 +1019,7 @@
 
     whyWootCommand.prototype.functionality = function() {
       var msg, nameIndex;
-      msg = "We dislike AFK djs. We calculate your AFK status by checking the last time you    	Woot'd or spoke. If you don't woot, I'll automagically remove you. Use our AutoWoot			script to avoid being removed: http://bit.ly/McZdWw";
+      msg = "We dislike AFK djs. We calculate your AFK status by checking the last time you      Woot'd or spoke. If you don't woot, I'll automagically remove you. Use our AutoWoot			script to avoid being removed: http://bit.ly/McZdWw";
       if ((nameIndex = this.msgData.message.indexOf('@')) !== -1) {
         return API.sendChat(this.msgData.message.substr(nameIndex) + ', ' + msg);
       } else {
@@ -1985,10 +1985,11 @@
   };
 
   announceCurate = function(obj) {
-    return API.sendChat("/em: " + obj.user.username + " เพิ่มเพลงนี้ลง Playlist");
+    return API.sendChat("/em : " + obj.user.username + " loves this song and Added");
+  
+  
   };
 
-  
 
   handleNewSong = function(obj) {
     var songId;
@@ -1996,7 +1997,7 @@
     if (data.currentsong === null) {
       data.newSong();
     } else {
-      API.sendChat("/em: Song just Played is : " + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + data.currentwoots + ", Mehs: " + data.currentmehs + ", Added: " + data.currentcurates + ".");
+      API.sendChat("/em : " + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + data.currentwoots + ", Mehs: " + data.currentmehs + ", Added: " + data.currentcurates + ".");
       data.newSong();
       document.getElementById("button-vote-positive").click();
     }
